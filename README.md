@@ -92,7 +92,7 @@ Windows 11 laptop, Docker Desktop 4.96 (WSL 2, 8 GB for Docker), whole stack abo
 |---|---|
 | Start from scratch with `docker compose up -d --build` | all 10 services up, data set downloaded automatically |
 | Throughput | 60 events/s per producer; 3 producers about 230 events/s incl. catch-up |
-| Correctness | 25,759 closed 5-min windows recomputed from `energy.readings` in SQL: 0 differences |
+| Correctness | 102,561 closed 5-min windows recomputed from `energy.readings` in SQL: 0 differences |
 | Duplicates | 0 duplicate readings, also after the failure test |
 | Failure test (`scripts/failure_test.sh`): Spark job stopped 30 s, Kafka restarted | processing resumed from checkpoints, no data lost, 0 duplicates |
 | Scaling `--scale producer=3 --scale spark-worker=2` | new meters join at the current stream time, both workers used |
